@@ -10,7 +10,7 @@ export default function Friends() {
   const { user } = useSelector((state) => ({ ...state }));
   const { type } = useParams();
 
-  const [{ loading, error, data }, dispatch] = useReducer(friendspage, {
+  const [{ data }, dispatch] = useReducer(friendspage, {
     loading: false,
     data: {},
     error: "",

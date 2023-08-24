@@ -20,7 +20,7 @@ export default function SearchMenu({ color, setShowSearchMenu, token }) {
   });
   useEffect(() => {
     getHistory();
-  }, []);
+  }, [getHistory]);
   const getHistory = async () => {
     const res = await getSearchHistory(token);
     setSearchHistory(res);
@@ -37,7 +37,6 @@ export default function SearchMenu({ color, setShowSearchMenu, token }) {
     }
   };
   const addToSearchHistoryHandler = async (searchUser) => {
-    const res = await addToSearchHistory(searchUser, token);
     getHistory();
   };
   const handleRemove = async (searchUser) => {
@@ -84,15 +83,15 @@ export default function SearchMenu({ color, setShowSearchMenu, token }) {
           />
         </div>
       </div>
-      {results == "" && (
+      {results === "" && (
         <div className="search_history_header">
           <span>Recent searches</span>
-          <a>Edit</a>
+          <button>Edit</button>
         </div>
       )}
       <div className="search_history scrollbar">
         {searchHistory &&
-          results == "" &&
+          results === "" &&
           searchHistory
             .sort((a, b) => {
               return new Date(b.createdAt) - new Date(a.createdAt);

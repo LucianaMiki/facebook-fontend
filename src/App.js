@@ -16,7 +16,7 @@ import Friends from "./pages/friends";
 function App() {
   const [visible, setVisible] = useState(false);
   const { user, darkTheme } = useSelector((state) => ({ ...state }));
-  const [{ loading, error, posts }, dispatch] = useReducer(postsReducer, {
+  const [{ loading, posts }, dispatch] = useReducer(postsReducer, {
     loading: false,
     posts: [],
     error: "",

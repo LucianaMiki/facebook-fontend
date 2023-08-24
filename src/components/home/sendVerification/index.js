@@ -27,6 +27,7 @@ export default function SendVerification({ user }) {
         after a month from creating.
       </span>
       <a
+        href={() => false}
         onClick={() => {
           sendVerificationLink();
         }}

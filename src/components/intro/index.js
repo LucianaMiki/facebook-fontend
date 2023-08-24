@@ -144,6 +144,7 @@ export default function Intro({ detailss, visitor, setOthername }) {
           <a
             href={`https://www.instagram.com/${details?.instagram}`}
             target="_blank"
+            rel="noreferrer"
           >
             {details?.instagram}
           </a>

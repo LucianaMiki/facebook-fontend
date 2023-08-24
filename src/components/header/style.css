@@ -209,7 +209,11 @@ header {
   font-weight: 600;
   font-size: 16px;
 }
-.search_history_header a {
+.search_history_header button {
+  background: none;
+  border: none;
+  font: inherit;
+  outline: inherit;
   cursor: pointer;
   color: var(--blue-color);
 }
